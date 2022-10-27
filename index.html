@@ -1,0 +1,147 @@
+<!-- 
+  ToDo:
+    - add more stuff
+    - add more stuff
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="index.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://kit.fontawesome.com/ef9db515bc.js" crossorigin="anonymous"></script>
+<!-- <style>
+  html {
+    background: url(./background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    opacity: 0;
+  }
+</style> -->
+
+
+<head>
+  <link rel="preload" href="./background.jpg" as="image">
+  <link rel="icon" href="favicon.png" type="image/x-icon" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sebastian Chamley</title>
+</head>
+
+<body>
+
+  <div class="main-page" id="bg">
+    <div class="container">
+      <div class="title"> Hi, I'm Sebastian.</div>
+      <br>
+      <div class="text">I'm a data engineer. In my spare time I like to make Music, learn new Tech and read Books.
+        Often those intertwine.
+        Here's some links:</div>
+    </div>
+    <div class="container">
+      <div class="carousel center-align valign-wrapper">
+        <!-- <a style="color:rgb(255, 0, 0)" class="carousel-item" href="https://github.com/chamley/UFC"><i
+          class="fab fa-github-square fa-3x fa-spin"></i></a> -->
+        <a style="color:#FFFF" class="carousel-item" href="https://github.com/chamley/"><i
+            class="x fab fa-github-square fa-4x "></i></a>
+        <a class="carousel-item" href="https://www.linkedin.com/in/sebastian-chamley/"><i
+            class="x fab fa-linkedin fa-4x "></i></a>
+        <a style="color:rgb(255, 242, 1)" class="carousel-item" href="https://rb.gy/y86v6n"><i
+            class="x fab fa-app-store fa-4x"></i></a>
+        <a style="color:rgb(255, 0, 183)" class="carousel-item"
+          href="https://platform.stratascratch.com/user/sebastianchamley"><i class="x fas fa-code fa-4x "></i></a>
+        <a style="color:rgb(20, 100, 57)" class="carousel-item" href="Sebastian_Chamley_Resume_2022.pdf" download><i
+            class="x fas fa-address-card fa-4x "></i></a>
+        <a style="color:rgb(64, 255, 0)" class="carousel-item" href="Sebastian_Chamley_Statement of Purpose.pdf"
+          download><i class="x fa-solid fa-feather fa-4x "></i></a>
+
+      </div>
+    </div>
+    <div class="fixed-action-btn click-to-toggle">
+      <a class="btn-floating btn-large orange pulse">
+        <i class="fab fa-github-square fa-4x fa-shake"></i>
+      </a>
+      <ul>
+        <li><a href="https://github.com/chamley/UFC#readme" class="btn-floating red"><i
+              class="fab fa-github-square fa-4x fa-bounce"></i></a>
+        </li>
+        <li><a href="https://github.com/chamley/indieclass#readme" class="btn-floating yellow darken-1"><i
+              class="fab fa-github-square fa-4x"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+<!-- <script>
+  document.querySelector('.main-page').style.display = 'none';
+  document.querySelector('.div1').classList.add('.progress');
+  document.querySelector('.div2').classList.add('.indeterminate');
+
+  setTimeout(() => {
+    document.querySelector('.div1').classList.remove('.progress');
+    document.querySelector('.div2').classList.remove('.indeterminate');
+    document.querySelector('.main-page').style.display = 'inline-block';
+  }, 1000);
+
+
+</script> -->
+
+<script>
+
+  // CAROUSEL
+  let carousel_options = {
+    fullWidth: false,
+    indicators: false
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.init(elems, carousel_options);
+  });
+
+  document.addEventListener('keydown', logKey);
+
+  // implement arrow functionality
+  function logKey(e) {
+    let el = document.querySelector('.carousel');
+    let i = M.Carousel.getInstance(el);
+    if (e.keyCode == 37) {
+      console.log('left');
+      i.prev();
+    } else if (e.keyCode == 39) {
+      i.next();
+    }
+  }
+
+  // autoscroll
+  window.setInterval(move, 6000)
+
+  function move(e) {
+    let el = document.querySelector('.carousel');
+    let i = M.Carousel.getInstance(el);
+    i.next()
+  }
+
+  //FAB
+  let fab_options = {}
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      direction: 'left',
+      hoverEnabled: false
+    });
+  });
+
+
+
+
+
+
+</script>
+
+</html>
